@@ -35,6 +35,13 @@ require 'pp'
 pp Generator.new(4).generate
 ```
 
+
+## Extra
+
+If an odd number of generated rows were to be requested, every person will still have a company.
+ex) If you generated 5 rows, there would be 3 unique companies.
+
+
 # Setup
 
 * Fork
