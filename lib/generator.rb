@@ -5,6 +5,7 @@ class Generator
 
   def initialize(length)
     @length = length
+    @companies = companies
   end
 
   def people
@@ -21,10 +22,9 @@ class Generator
 
   def generate
     i = 0
-    people.map do |person|
-      result = (person << companies[i])
-      i += 1
-      i = 0 if i == (@length / 2)
+    people.map.with_index do |person, index|
+      result = (person << @companies[i])
+      i += 1 if index.odd?
       result
     end
   end
